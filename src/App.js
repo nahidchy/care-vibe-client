@@ -9,6 +9,9 @@ import Login from './Components/Login/Login';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Reviews from './Components/Reviews/Reviews';
 import AboutUs from './Components/AboutUs/AboutUs';
+import AddService from './Components/AddService/AddService';
+import MyReviews from './Components/MyReviews/MyReviews';
+
 
 function App() {
   const router=createBrowserRouter([
@@ -19,22 +22,22 @@ function App() {
         {
           path:'/',
           element:<Home></Home>,
-          loader:()=>fetch('http://localhost:5000/servicesThree')
+          loader:()=>fetch('https://care-vibe-server.vercel.app/servicesThree')
         },
         {
           path:'/services',
           element:<Services></Services>,
-          loader:()=>fetch('http://localhost:5000/services')
+          loader:()=>fetch('https://care-vibe-server.vercel.app/services')
         },
         {
           path:'/services/:id',
           element:<PrivateRoute><ServiceDetaile></ServiceDetaile></PrivateRoute>,
-          loader:({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+          loader:({params})=>fetch(`https://care-vibe-server.vercel.app/services/${params.id}`)
         },
         {
           path:'/reviews',
           element:<Reviews></Reviews>,
-          loader:()=>fetch('http://localhost:5000/reviews')
+          loader:()=>fetch('https://care-vibe-server.vercel.app/reviews')
         },
         {
           path:'/signUp',
@@ -48,6 +51,14 @@ function App() {
         {
           path:'/aboutUs',
           element:<AboutUs></AboutUs>
+        },
+        {
+          path:'/addService',
+          element:<PrivateRoute><AddService></AddService></PrivateRoute>
+        },
+        {
+          path:'/myReviews',
+          element:<PrivateRoute><MyReviews></MyReviews></PrivateRoute>
         }
       ]
     }

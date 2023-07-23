@@ -3,10 +3,10 @@ import { Link, useLoaderData } from 'react-router-dom';
 const Services = () => {
     const services = useLoaderData();
     return (
-        <div className='py-10 lg:py-20 container'>
+        <div className='py-20 pb-80 lg:py-44 container'>
 
-            <h1 className='text-7xl font-bold pt-5 text-center'>Services</h1>
-            <div className='lg:grid grid-cols-2 gap-20 items-center justify-center mx-auto w-full py-20 mb-40'>
+            <h1 className='text-5xl lg:text-7xl font-bold pt-10 text-center'>Services</h1>
+            <div className='lg:grid grid-cols-2 gap-20 items-center justify-center mx-auto w-full pt-10 pb-32 mb-96'>
                 {
                     services.map(service =>
                         <div className='w-full mt-5 lg:mt-0 relative' key={service._id}>

@@ -6,6 +6,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import OurValues from '../OurValues/OurValues';
 const Home = () => {
     const services = useLoaderData();
     const carouselData = [
@@ -79,9 +80,9 @@ const Home = () => {
                 </div>
                 <div className='absolute top-0 right-0 left-0 bg-black bg-opacity-20 flex items-center justify-center mx-auto h-[60vh] lg:h-screen'>
                     <div className=' lg:p-10 p-1 text-center'>
-                        <h1 className='text-white lg:text-8xl text-5xl font-extrabold'>Health & Medical Center</h1>
-                        <h1 className='text-white  text-xl mt-4 lg:text-3xl font-semibold'>We care for you health. So, 99% of our clients recommend us.</h1>
-                        <button className='text-black font-semibold lg:font-bold btn px-2 lg:px-4 bg-primary hover:bg-primary mt-5'>Learn More</button>
+                        <h1 className='text-white lg:text-8xl text-4xl font-extrabold'>Health & Medical Center</h1>
+                        <h1 className='text-white   mt-4 lg:text-3xl font-semibold'>We care for you health. So, 99% of our clients recommend us.</h1>
+                        <Link to='/aboutUs'><button className='text-white font-semibold lg:font-bold btn px-2 lg:px-4 bg-primary hover:bg-primary mt-5'>Learn More</button></Link>
                     </div>
                 </div>
             </div>
@@ -96,7 +97,7 @@ const Home = () => {
                             <img className='w-full object-cover' src='https://www.pngfind.com/pngs/m/674-6744588_signature-transparent-art-transparent-background-signature-png-png.png' alt=''></img>
                         </div>
                         <div className='text-left w-2/3'>
-                            <h3 className='text-3xl font-bold'>Tom Henders</h3>
+                            <h3 className='text-2xl font-semibold'>Tom Henders</h3>
                             <h4 className='text-xl font-semibold text-gray-500'>CEO of Company</h4>
                         </div>
                     </div>
@@ -143,22 +144,22 @@ const Home = () => {
 
                                     <p className='  text-center text-4xl text-white font-extrabold  '>{service.name}</p>
                                     <Link to={`/services/${service._id}`}>
-                                    <button className='mt-2 text-white font-bold'>Read More...</button>
+                                    <button className='mt-2 text-white p-3 rounded bg-white bg-opacity-20 font-bold'>Read More...</button>
                                     </Link>
                                 </div>
                             </div>
                         )
                     }
                 </div>
-                <div className='flex items-center justify-center'> <Link to='/services'><button className='text-black font-semibold lg:font-bold btn px-8 lg:px-8 bg-primary hover:bg-primary'>See All</button></Link></div>
+                <div className='flex items-center justify-center'> <Link to='/services'><button className='text-white font-semibold lg:font-bold btn px-8 lg:px-8 bg-primary hover:bg-primary'>See All</button></Link></div>
             </div>
             <hr className="container w-2/3 my-2 border-t-1 border-gray-400" />
             <div className='py-20 w-full'>
                 <img className='w-full h-60 lg:h-[550px] object-cover' src='https://torange.biz/photofxnew/210/HD/vivid-colors-blur-frame-fragment-diagnosis-210985.jpg' alt=''></img>
             </div>
-            <div className='py-20 container'>
+            <div className='pb-64 pt-10 container'>
                 <h3 className='text-4xl lg:text-6xl font-bold text-center'>Our Doctors</h3>
-                <div className='text-black py-20'>
+                <div className='text-black py-20 mb-96 pb-52 lg:mb-0 '>
                     <Slider {...settings1}>
                         {
                             carouselData.map((data, id) =>
@@ -171,7 +172,9 @@ const Home = () => {
                             )
                         }
                     </Slider>
+                    <OurValues></OurValues>
                 </div>
+               
             </div>
             
         </div>

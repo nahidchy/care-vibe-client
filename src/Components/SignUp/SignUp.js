@@ -34,7 +34,8 @@ const SignUp = () => {
          .catch(error=>console.error(error))
     }
     return (
-        <div className="hero container min-h-screen bg-base-200 py-28">
+       <div>
+         <div className="hero container min-h-screen bg-base-200 py-28">
   <div className="hero-content flex-col lg:flex-row lg:gap-52 items-center">
   
     <div className="text-left lg:text-left w-full lg:w-2/5 gap-20">
@@ -79,6 +80,10 @@ const SignUp = () => {
     </div>
   </div>
 </div>
+<div className='py-80 lg:py-60'>
+
+</div>
+       </div>
     );
 };
 

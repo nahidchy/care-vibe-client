@@ -2,7 +2,7 @@ import React from 'react';
 import { CheckIcon } from '@heroicons/react/24/solid'
 const AboutUs = () => {
     return (
-        <div className='container py-32'>
+        <div className='container py-32  pb-96'>
             <h1 className='text-center text-5xl lg:text-7xl font-bold mb-10'>About Us</h1>
             <div className=''>
                 <img className='w-full h-[400px] lg:h-[550px] object-fill' src='https://img.freepik.com/premium-photo/group-doctors-standing-front-hospital-room_889227-23144.jpg' alt=''></img>
@@ -54,7 +54,7 @@ const AboutUs = () => {
                 </div>
             </div>
             <hr className="container w-2/3 my-4 border-t-1 border-gray-400" />
-            <div className='pb-5'>
+            <div className='pb-96 lg:pb-36'>
               <p className='text-gray-500'>
               At Care Vibe, we embrace the latest advancements in medical technology to enhance the accuracy and effectiveness of our treatments. Our state-of-the-art facilities and equipment allow us to deliver cutting-edge healthcare services, setting new standards in the medical industry.
               </p>

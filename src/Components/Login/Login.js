@@ -35,14 +35,15 @@ const Login = () => {
          .catch(error=>console.error(error))
     }
     return (
-        <div className="hero container min-h-screen bg-base-200 py-20">
+        <div>
+          <div className="hero container min-h-screen bg-base-200 py-20 pb-96">
   <div className="hero-content flex-col lg:flex-row lg:gap-52 items-center justify-center">
   
     <div className="text-left lg:text-left w-full lg:w-2/5 gap-20">
     <Lottie animationData={animation} />
     </div>
     
-    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mb-16 lg:mb-0">
+    <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 pb-16 mb-96 lg:mb-0">
       <form onSubmit={handleSubmit} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -69,6 +70,10 @@ const Login = () => {
     </div>
   </div>
 </div>
+<div className='lg:py-20'>
+
+</div>
+        </div>
     );
 };
 

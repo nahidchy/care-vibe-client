@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 
 
 const CommnetEditModal = ({review}) => {
@@ -9,7 +8,7 @@ const CommnetEditModal = ({review}) => {
       event.preventDefault();
       const form=event.target;
       const comment = event.target.comment.value;
-      fetch(`http://localhost:5000/reviews/${review._id}`,{
+      fetch(`https://care-vibe-server.vercel.app/reviews/${review._id}`,{
             method:"PATCH",
             headers:{
                 'content-type':'application/json'

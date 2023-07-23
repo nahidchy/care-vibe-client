@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import moment from 'moment';
 import Review from '../Review/Review';
 import {AuthContext} from '../AuthProvider/AuthProvider'
 const ServiceDetaile = () => {
@@ -12,8 +13,9 @@ const ServiceDetaile = () => {
         const form = event.target;
         const commnet = form.comment.value;
         const serviceId = serviceDetail._id;
-        const review = { commnet,  serviceId, photo:user?.photoURL, name: user?.displayName};
-        fetch('http://localhost:5000/reviews', {
+        const date = moment().format("MMM Do YY");
+        const review = { commnet,  serviceId, photo:user?.photoURL, name: user?.displayName,uid:user?.uid,date};
+        fetch('https://care-vibe-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -28,9 +30,9 @@ const ServiceDetaile = () => {
             })
     }
     return (
-        <div className='container py-20 '>
+        <div className='container py-20'>
             <div className='flex flex-col items-center justify-center mx-auto'>
-                <div className='w-full lg:w-2/3 mt-10'>
+                <div className='w-full lg:w-2/3 mt-10 mb-30'>
                     <img className='rounded w-full h-full object-cover' src={serviceDetail.image} alt=''></img>
                     <h3 className='text-xl lg:text-4xl font-bold mt-5'>Name:{serviceDetail.name}</h3>
                     <p className='text-xl text-gray-500 mt-5'><span className='font-bold'>Details</span>:{serviceDetail.description}</p>
